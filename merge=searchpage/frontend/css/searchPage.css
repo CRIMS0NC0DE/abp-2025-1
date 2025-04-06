@@ -1,0 +1,61 @@
+/* Search Page CSS */
+
+body {
+    font-family: "Roboto Slab";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Estilização da logo */
+  .logo {
+    text-align: center;
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  /* Estilização barra de busca */
+  .search__input {
+    text-align: center;
+    margin-bottom: 50px 0;
+  }
+
+  .search__input input{
+    width: 300px;
+    padding: 5px;
+    border: 1px solid black;
+  }
+
+  /* Estilização contéudo da página */
+  .info__container{
+    display: flex;
+    justify-content: space-around;  
+    gap: 20px;
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  .side-bar, .downloads {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid black;
+    
+  }
+
+  .pesquisa{
+    flex: 3;
+    border-radius: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    color: blue;
+    padding: 50px;
+
+  }

@@ -1,0 +1,61 @@
+version: "3.8"
+
+services:
+  nginx_proxy:
+    image: "jc21/nginx-proxy-manager:latest"
+    container_name: nginx_proxy
+    restart: unless-stopped
+    ports:
+      - "80:80" # HTTP
+      - "443:443" # HTTPS
+      - "81:81" # Painel de administração do Proxy
+    volumes:
+      - ./nginx_data:/data
+      - ./nginx_letsencrypt:/etc/letsencrypt
+    environment:
+      DB_SQLITE_FILE: "/data/database.sqlite"
+
+  backend:
+    image: meu-backend:latest
+    container_name: backend
+    restart: always
+    build: ./backend
+    environment:
+      - DB_HOST=db
+      - DB_USER=postgres
+      - DB_PASS=postgres
+      - DB_NAME=meubanco
+    depends_on:
+      - db
+    ports:
+      - "3000:3000" # Exemplo: porta 3000 exposta para o backend
+
+  db:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: meubanco
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80" # O pgAdmin estará acessível na porta 5050
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+  nginx_data:
+  nginx_letsencrypt:
