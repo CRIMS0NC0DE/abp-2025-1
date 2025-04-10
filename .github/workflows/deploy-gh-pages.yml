@@ -16,7 +16,7 @@ jobs:
 
       # Renomeia homePage.html como index.html, atendendo a expecificidade do deploy do github pages.
       - name: Renomear homePage.html para index.html
-        run: mv homePage.html index.html
+        run: mv frontend/html/homePage.html frontend/html/index.html
 
       # Publicação do conteúdo da pasta frontend/html na branch gh-pages
       - name: Deploy para GitHub Pages
