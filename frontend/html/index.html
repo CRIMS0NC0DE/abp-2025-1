@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FATREK - Site de consultas da FATEC Jacareí!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/frontend/css/reset.css">
+    <link rel="stylesheet" href="/frontend/css/homePage.css"><!-- Incluir o caminho final do arquivo CSS correspondente. -->
+</head>
+<body>
+    <header class="header"><!-- Definindo o header como o bloco "header" -->
+        <div class="header__container">
+            <div class="header__logo">
+                Logo
+            </div>
+            <div class="header__welcome">
+                <h1 class="header__title">Seja bem-vindo</h1>
+            </div>
+            <button  class="header__alternate-modes" aria-label="Alternar modos claro/escuro"> 
+                <div class="header__icon header__icon--light">
+                    Modo Claro
+                    <img src="https://img.icons8.com/?size=100&id=JHsm5oZeWqae&format=png&color=228BE6" alt="Botão para modo claro">
+                </div>
+                <div class="header__icon header__icon--dark">
+                    Modo Escuro 
+                    <img src="https://img.icons8.com/?size=100&id=36612&format=png&color=228BE6" alt="Botão para modo escuro">
+                </div>
+            </button> <!-- Uso de 'aria-label' seguindo a especificação WAR-ARIA de acessibilidade -->
+        </div>
+    </header>
+
+    <main>
+        <section class="carousel"><!-- Bloco do carrossel -->
+            //Carrossel de imagens (Podem ser da FATEC ou do CPS)
+        </section>
+
+        <section class="cards">
+            <a href="/frontend/html/searchPage.html">
+                <article class="cards__menu cards__menu--search">
+                    <h2 class="cards__menu-title">Busca</h2>
+                    <p><!-- descrição do serviço --></p>
+                    <img class="cards__menu-icon" src="https://img.icons8.com/?size=100&id=7695&format=png&color=228BE6" alt="Ícone de busca">
+                </article>
+            </a>
+            <article class="cards__menu cards__menu--courses">
+                <h2 class="cards__menu-title">Cursos</h2>
+                <p><!-- descrição do serviço --></p>
+                <img class="cards__menu-icon" src="https://img.icons8.com/?size=100&id=101175&format=png&color=228BE6" alt="Ícone de cursos">
+            </article>
+            <article class="cards__menu cards__menu--map">
+                <h2 class="cards__menu-title">Mapa</h2>
+                <p><!-- descrição do serviço --></p>
+                <img class="cards__menu-icon" src="https://img.icons8.com/?size=100&id=CZCiPdBUMnqX&format=png&color=228BE6" alt="Ícone de mapa">
+            </article>
+        </section>
+    </main>
+    <script src="homePage.js"></script>
+</body>
+</html>
