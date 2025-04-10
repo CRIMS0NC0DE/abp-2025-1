@@ -1,0 +1,22 @@
+name: Deploy para GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout do código na branch main
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
+
+      # Publicação do conteúdo da pasta frontend/html na branch gh-pages
+      - name: Deploy para GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/html
