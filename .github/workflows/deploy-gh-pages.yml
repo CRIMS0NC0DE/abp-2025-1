@@ -14,9 +14,13 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v3
 
+      # Renomeia homePage.html como index.html, atendendo a expecificidade do deploy do github pages.
+      - name: Renomear homePage.html para index.html
+        run: mv homePage.html index.html
+
       # Publicação do conteúdo da pasta frontend/html na branch gh-pages
       - name: Deploy para GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend/html/homePage.html
+          publish_dir: ./frontend/html
