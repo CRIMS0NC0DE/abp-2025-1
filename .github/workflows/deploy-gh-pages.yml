@@ -14,9 +14,13 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v3
 
-      # Renomeia homePage.html como index.html, atendendo a expecificidade do deploy do github pages.
+      # Renomeia homePage.html para index.html
       - name: Renomear homePage.html para index.html
         run: mv frontend/html/homePage.html frontend/html/index.html
+
+      # Passo de Debug: listar arquivos para confirmar a renomeação
+      - name: Listar arquivos para debug
+        run: ls -al frontend/html
 
       # Publicação do conteúdo da pasta frontend/html na branch gh-pages
       - name: Deploy para GitHub Pages
