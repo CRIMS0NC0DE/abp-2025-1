@@ -1,3 +1,4 @@
+module.exports = (app, db) => {
 app.get('/verificar-integridade', async (req, res) => {
   try {
     const erros = [];
@@ -5,8 +6,7 @@ app.get('/verificar-integridade', async (req, res) => {
  
     // SQL será inserido aqui futuramente
     const horariosSemProfessor = await db.query(`
-      -- TODO: Inserir SQL para buscar horários sem professor
-      SELECT 'simulado' as id_horario -- substituir por query real
+        SELECT id_professor FROM alocacao_horario WHERE id_professor IS NULL
     `);
     if (horariosSemProfessor.rowCount > 0) {
       erros.push({
@@ -17,8 +17,7 @@ app.get('/verificar-integridade', async (req, res) => {
 
  
     const disciplinasSemTurma = await db.query(`
-      -- TODO: Inserir SQL para buscar disciplinas sem turma
-      SELECT 'simulado' as id_disciplina -- substituir por query real
+        SELECT id_turma FROM disciplina_turma WHERE id_turma IS NULL
     `);
     if (disciplinasSemTurma.rowCount > 0) {
       erros.push({
@@ -29,13 +28,33 @@ app.get('/verificar-integridade', async (req, res) => {
 
    
     const conflitosHorarios = await db.query(`
-      -- TODO: Inserir SQL para detectar conflitos de horários
-      SELECT 'simulado1' as horario1, 'simulado2' as horario2, 'professor' as nome_professor
+        SELECT 
+          h1.id_alocacao AS alocacao_1,
+          h2.id_alocacao AS alocacao_2,
+          a1.id_professor,
+          h1.dia_semana,
+          h1.hora_inicio AS inicio_1,
+          h1.hora_fim AS fim_1,
+          h2.hora_inicio AS inicio_2,
+          h2.hora_fim AS fim_2
+        FROM 
+          Horario h1
+        JOIN 
+          Alocacao_Horario a1 ON h1.id_alocacao = a1.id_alocacao
+        JOIN 
+          Horario h2 ON h1.id_horario < h2.id_horario
+        JOIN 
+          Alocacao_Horario a2 ON h2.id_alocacao = a2.id_alocacao
+        WHERE 
+          a1.id_professor = a2.id_professor
+          AND h1.dia_semana = h2.dia_semana
+          AND h1.hora_inicio < h2.hora_fim
+          AND h1.hora_fim > h2.hora_inicio;
     `);
-    if (conflitos.rowCount > 0) {
+      if (conflitosHorarios.rowCount > 0) {
       erros.push({
         tipo: 'conflito_horario_professor',
-        dados: conflitos.rows,
+          dados: conflitosHorarios.rows,
       });
     }
 
@@ -52,3 +71,4 @@ app.get('/verificar-integridade', async (req, res) => {
     res.status(500).json({ erro: 'Erro ao verificar integridade dos dados' });
   }
 });
+}
