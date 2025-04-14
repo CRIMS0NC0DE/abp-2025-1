@@ -12,6 +12,14 @@
       <img src="/assets/logoFatrek.png" alt="Logo Fatrek" height="100px" width="100px"/>
     </div>
     <div class="search__input">
+        <!-- <input type="text" placeholder="Buscar"> -->
+         <label for="select">Selecione
+          <select name="tabelas" id="">
+            <option value="DSM">DSM</option>
+            <option value="Geoprocessamento matutino">Geoprocessamento</option>
+            <option value="Meio ambiente Noturno">Meio Ambiente</option>
+          </select>
+        </label>
         <input type="text" placeholder="Buscar">
         <a class="search__input__button">
           <button>🔍</button>
@@ -34,6 +42,7 @@
             <li>Meio ambiente e recursos hídricos</li>
           </ul>
           <li class="sem-marcador"><strong>Andar</strong></li>
+          <div class="andar"></div>
           <ul>
             <li>DSM</li>
             <li>Geoprocessamento</li>
@@ -49,26 +58,18 @@
               <li>DSM</li>
                 <button onclick="toggleListaHorariosDSM()">📁 Horarios</button>
                   <ul id="horariosDsm" style="display: none;">
-                    <li><a href="arquivos/horario-a.pdf" download>Horário Turma A (.pdf)</a></li>
-                    <li><a href="arquivos/horario-b.xlsx" download>Horário Turma B (.xlsx)</a></li>
-                    <li><a href="arquivos/horario-c.docx" download>Horário Turma C (.docx)</a></li>
-                    <li><a href="arquivos/horarios.zip" download>Todos os horários (.zip)</a></li>
+                    <li><a href="arquivos/horario-dsm.pdf" download>Horários DSM  (.pdf)</a></li>
                   </ul>
               <li>Geoprocessamento</li>
                 <button onclick="toggleListaHorariosGEO()">📁 Horarios</button>
                   <ul id="horariosGeo" style="display: none;">
-                    <li><a href="arquivos/geo-horario-a.pdf" download>Horário Turma A (.pdf)</a></li>
-                    <li><a href="arquivos/geo-horario-b.xlsx" download>Horário Turma B (.xlsx)</a></li>
-                    <li><a href="arquivos/geo-horario-c.docx" download>Horário Turma C (.docx)</a></li>
-                    <li><a href="arquivos/geo-horarios.zip" download>Todos os horários (.zip)</a></li>
+                    <li><a href="arquivos/horario-geo.pdf" download>Horários Geoprocessamento (.pdf)</a></li>
                   </ul>
               <li>Meio Ambiente</li>
                 <button onclick="toggleListaHorariosMA()">📁 Horarios</button>
                   <ul id="horariosMA" style="display: none;">
-                    <li><a href="arquivos/meio-horario-a.pdf" download>Horário Turma A (.pdf)</a></li>
-                    <li><a href="arquivos/meio-horario-b.xlsx" download>Horário Turma B (.xlsx)</a></li>
-                    <li><a href="arquivos/meio-horario-c.docx" download>Horário Turma C (.docx)</a></li>
-                    <li><a href="arquivos/meio-horarios.zip" download>Todos os horários (.zip)</a></li>
+                    <li><a href="arquivos/horario-meio-ambiente-matutino.pdf" download>Horário Geoprocessamento Manhã (.pdf)</a></li>
+                    <li><a href="arquivos/horario-meio-ambiente-noturno.pdf" download>Horário Geoprocessamento Noite (.pdf)</a></li>
                   </ul>
             </ul>
           </div>
@@ -76,5 +77,7 @@
       </div>
     </div>
     <script src="../Js/searchPage.js"></script>
+      </div>
+    </div>
   </body>
 </html>
