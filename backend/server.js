@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   res.send('🚀 API rodando com sucesso e com deploy automático! hahahahaha');
 });
 
-require('./verificarDados')(app, db);
+require('./dataVerification')(app, db);
 
 
 app.listen(port, () => {
