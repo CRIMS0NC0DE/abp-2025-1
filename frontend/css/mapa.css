@@ -1,0 +1,120 @@
+body {
+    background: url('/assets/fatec_02.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+
+}
+
+.cabecalho {
+    display: flex;
+    background-color: #bf0606;
+    font-family: "Roboto Slab", serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    height: 130px;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5%;
+}
+
+#fatec {
+    margin-right: 30px;
+}
+
+.mapa-container {
+    background-color: #076873;
+    padding: 40px;
+    width: 977px;
+    height: 661px;
+    margin: 100px auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.text-mapa > h1 {
+    font-family: "Roboto Slab", serif;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.text-mapa > p {
+    font-family: "Roboto Slab", serif;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.mapa-interativ {
+    background-color: #d9d9d9;
+    margin-top: 20px;
+    height: 464px;
+    width: 887px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+#btn-opcoes {
+    font-family: "Roboto Slab", serif;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bold;
+    background-color:#bf0606;
+    width: 136px;
+    height: 33px;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+}
+
+#btn-opcoes:hover {
+    background: #BF0606;
+  }
+
+.buttons-mapa {
+    display: none; /* Utilizei para as opções ficarem escondidas */
+    gap: 10px;
+}
+
+.buttons-mapa.show {
+    display: flex; /* Mostrar quando clicar */
+}
+.buttons-mapa button {
+    background-color: #B8D5D9;
+    border: none;
+    color: #8C0404;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 100%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container_rodape {
+    background-color: #BF0606;
+    width: 100%;
+    height: 80px;
+    color: white;
+    text-align: center;
+    font-family: "Roboto Slab", serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 25px
+}

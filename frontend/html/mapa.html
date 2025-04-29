@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Mapa Interativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/mapa.css" />
+  </head>
+  <body>
+    <div class="cabecalho">
+      <a href="https://fatecjacarei.cps.sp.gov.br/" id="fatec"
+        >FATEC - Jacareí</a
+      >
+      <a href="https://siga.cps.sp.gov.br/">SIGA</a>
+    </div>
+    <div class="mapa-container">
+      <form>
+        <div class="text-mapa">
+          <h1>Mapa Interativo</h1>
+          <p>Selecione o Ambiente</p>
+        </div>
+        <div class="menu" id="menu-container">
+          <button id="btn-opcoes">Opções</button>
+          <div class="buttons-mapa" id="menu-opcoes">
+            <button>T</button>
+            <button>1º</button>
+            <button>2º</button>
+          </div>
+        </div>
+        <div class="mapa-interativ">
+          <img
+            src="../../assets/"
+            alt="mapa-img"
+            width="464px"
+            height="887px"
+          />
+        </div>
+      </form>
+    </div>
+    <footer>
+        <div class="container_rodape">
+            © 2025 FATEC Jacareí - Desenvolvolvido por Crims0nc0de - Todos os direitos reservados.
+        </div>
+    </footer>
+    <script>
+      const btnOpcoes = document.getElementById("btn-opcoes");
+      const menuOpcoes = document.getElementById("menu-opcoes");
+
+      btnOpcoes.addEventListener("click", (e) => {
+        e.stopPropagation(); // impede que o clique no botão feche o menu
+        menuOpcoes.classList.toggle("show");
+      });
+
+      // Se quiser que o menu feche ao clicar fora dele:
+      document.addEventListener("click", (e) => {
+        if (!btnOpcoes.contains(e.target) && !menuOpcoes.contains(e.target)) {
+          menuOpcoes.classList.remove("show");
+        }
+      });
+    </script>
+  </body>
+</html>
