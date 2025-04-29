@@ -69,6 +69,11 @@ select {
   text-align: center;
 }
 
+
+#cursos{
+width: 400px;
+}
+
 option {
   background-color: white;
   color: black;
