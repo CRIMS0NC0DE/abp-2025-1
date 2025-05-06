@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Horário</title>
@@ -7,9 +8,10 @@
   <link rel="stylesheet" href="../css/horarios.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="cabecalho">
-    <a href="https://fatecjacarei.cps.sp.gov.br/" id="fatec">FATEC - Jacareí</a>
+    <a href="./index.html" id="fatec">FATEC - Jacareí</a>
     <a href="https://siga.cps.sp.gov.br/" id="siga">SIGA</a>
     <a href="./index.html">HOME</a>
   </div>
@@ -18,6 +20,15 @@
     <h2>Horário do Curso</h2>
 
     <div class="selects">
+      <div class="select_group">
+        <label for="curso">Curso</label>
+        <select id="curso">
+          <option value="ds">Desenvolvimento de Software</option>
+          <option value="marh">Meio Ambiente e Recursos Hídricos</option>
+          <option value="geo">Geoprocessamento</option>
+        </select>
+      </div>
+
       <div class="select_group">
         <label for="periodo">Período</label>
         <select id="periodo">
@@ -86,5 +97,7 @@
 
     <button class="exportar_btn">Exportar</button>
   </div>
+  <script src="../js/horarios.js"></script>
 </body>
+
 </html>

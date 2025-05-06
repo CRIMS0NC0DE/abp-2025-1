@@ -56,6 +56,11 @@ h2 {
   
 }
 
+.select_group label {
+  color: white;
+  font-weight: bold; /* opcional, só pra dar mais destaque */
+}
+
 select {
   background-color: #bf0606;
   border: none;
