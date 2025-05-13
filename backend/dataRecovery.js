@@ -1,54 +1,32 @@
-// Rota de recuperação de dados dos horários (Task #135)
+// Rota de recuperação de dados dos horários
 
-// Realizar alteração do nome da tabela e nome das colunas 
-// Estudar funcionalidade do codigo
 module.exports = (app, db) => {
-app.get('/horarios', async (req, res) => {
+  app.get("/horarios", async (req, res) => {
+    const { curso, periodo, semestre } = req.query;
+
     try {
       const query = `
         SELECT 
           h.id_horario,
           h.dia_semana,
-          h.hora_inicio,
-          h.hora_fim,
-          a.nome_ambiente,
-          p.nome_professor,
-          p.email_professor
-        FROM Horario h
-        JOIN Ambiente a ON h.id_ambiente = a.id_ambiente
-        JOIN Alocacao_Horario ah ON h.id_alocacao = ah.id_alocacao
-        JOIN Professor p ON ah.id_professor = p.id_professor
+          h.horario,
+          t.nome AS turma,
+          d.nome AS disciplina,
+          p.nome AS professor
+        FROM horarios h
+        JOIN turmas t ON h.id_turma = t.id_turma
+        JOIN disciplinas d ON h.id_disciplina = d.id_disciplina
+        JOIN professores p ON h.id_professor = p.id_professor
+        JOIN semestres s ON t.id_semestre = s.id_semestre
+        JOIN cursos c ON t.id_curso = c.id_curso
+        WHERE c.nome = $1 AND s.periodo = $2 AND s.numero = $3
       `;
-  
-      const result = await db.query(query);
+
+      const result = await db.query(query, [curso, periodo, semestre]);
       res.json(result.rows);
     } catch (err) {
-      console.error('❌ Erro ao recuperar dados:', err);
-      res.status(500).json({ erro: 'Erro ao recuperar dados do banco' });
-    }
-  });
-}
-
-
-module.exports = (app, db) => {                      //exporta o app, e o db
-  app.get("/horarios", async (req, res) => {         //cria a rota GET para o /horarios, e cria a função async(assincrona)
-    const {curso, periodo, semestre} = req.query;    //
-
-    //tenta executar a consulta com o db.query, o await é necessário por ser uma operação assíncrona
-    try {
-      const resultado = await db.query(
-        //consulta os dados da tabela horario usando o select * from e coloca os dados nos parametros dentro do []
-        `SELECT * FROM horarios WHERE cursos = $1 AND periodo = $2 AND semestre = $3`,  //ou então: SELECT * FROM horarios WHERE ($1, $2, $3)
-         [curso, periodo, semestre]
-      );
-      //manda o resultado em json
- res.json(resultado.rows);
-    } catch (err) {     // caso não funcione ele mostra o erro coma mensagem e o tipo de erro(500)
-      console.error("Erro ao buscar dados ❌", err );
-      res.status(500).json({Erro: "Erro interno no servidor"});
+      console.error("❌ Erro ao recuperar dados:", err);
+      res.status(500).json({ erro: "Erro ao recuperar dados do banco" });
     }
   });
 };
-
-
-
