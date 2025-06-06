@@ -1,9 +1,14 @@
+/* ------------------------- */
+/* ESTILOS GERAIS */
+/* ------------------------- */
+
 body {
-  background: url('../../assets/fatec_02.jpg');
+  background: url("../../assets/fatec_02.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   font-family: "Roboto Slab", serif;
+  margin: 0; /* Evita espaços indesejados */
 }
 
 .cabecalho {
@@ -22,17 +27,18 @@ body {
   margin-right: 30px;
 }
 
-#siga{
+#siga {
   margin-right: 30px;
 }
 
 .horario__container {
   background-color: #076873;
   padding: 40px;
-  width: 900px;
+  width: 90%;
+  max-width: 900px;
   margin: 50px auto;
   border-radius: 20px;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
 
@@ -47,18 +53,19 @@ h2 {
   justify-content: center;
   gap: 30px;
   margin-bottom: 30px;
+  flex-wrap: wrap; /* permite quebra em telas menores */
 }
 
 .select_group {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  margin-bottom: 10px; /* espaço extra em telas menores */
 }
 
 .select_group label {
   color: white;
-  font-weight: bold; /* opcional, só pra dar mais destaque */
+  font-weight: bold;
 }
 
 select {
@@ -74,7 +81,7 @@ select {
   text-align: center;
 }
 
-#filtrar_btn{
+#filtrar_btn {
   background-color: #bf0606;
   border: none;
   width: 150px;
@@ -87,7 +94,7 @@ select {
   text-align: center;
 }
 
-#filtrar_btn:hover{
+#filtrar_btn:hover {
   background-color: #6a0303;
 }
 
@@ -101,12 +108,15 @@ table.tabela_horario {
   border-collapse: collapse;
   margin-bottom: 30px;
   background-color: white;
+  overflow-x: auto;
+  display: block; /* permite scroll em telas pequenas */
 }
 
 table.tabela_horario th,
 table.tabela_horario td {
   border: 1px solid #ccc;
   padding: 10px;
+  text-align: center;
 }
 
 table.tabela_horario th {
@@ -146,40 +156,90 @@ table.tabela_horario th {
   border-radius: 20px;
   padding: 10px 30px;
   cursor: pointer;
+  transition: all 0.3s ease-out; /* correção da vírgula */
 }
 
-.exportar_btn:hover{
-  transition: all 0,3 ease-out;
+.exportar_btn:hover {
   background-color: #6a0303;
 }
 
-
- /* Estilos para impressão/PDF */
+/* Estilos para impressão/PDF */
 .tabela_horario {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
 }
 
-.tabela_horario th, .tabela_horario td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.tabela_horario th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+.tabela_horario th,
+.tabela_horario td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  width: 10%;
+  border-collapse: collapse;
 }
 
 .tabela_horario tr:nth-child(even) {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
-/* Melhora a visualização das células com múltiplas disciplinas */
-  .tabela_horario td hr { 
-    margin: 3px 0;
-    border: 0;
-    border-top: 1px dashed #ccc;
+.tabela_horario td hr {
+  margin: 3px 0;
+  border: 0;
+  border-top: 1px dashed #ccc;
+}
+
+/* ------------------------- */
+/* RESPONSIVIDADE */
+/* ------------------------- */
+
+/* Tablets e menores */
+@media (max-width: 768px) {
+  .cabecalho {
+    height: auto;
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .selects {
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+  }
+
+
+  .exportar_btn {
+    width: 100%;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .cabecalho a {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .horario__container {
+    padding: 20px;
+  }
+
+  .select_group select,
+  #filtrar_btn {
+    width: 100%;
+  }
+
+  table.tabela_horario th,
+  table.tabela_horario td {
+    padding: 5px;
+    font-size: 12px;
+    width: 10%;
+    border-collapse: collapse;
+  }
 }
 
