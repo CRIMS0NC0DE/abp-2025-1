@@ -299,7 +299,6 @@ footer {
   outline: 2px solid #5b9ea6; /* Borda ao focar em célula editável */
 }
 
-
 /* Media query (telas menores) */
 @media (max-width: 768px) {
   .insercao__title {
@@ -322,5 +321,8 @@ footer {
   .insercao__container {
     width: 450px;
     margin: 50px auto;
+  }
+  .container-footer {
+    padding: 20px 0 50px 0;
   }
 }
