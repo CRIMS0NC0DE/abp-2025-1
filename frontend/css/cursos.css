@@ -26,28 +26,23 @@ body {
 }
 
 .cursos__container {
-  background-color: #076873;
   padding: 40px;
-  width: 728px;
   height: 661px;
   margin: 100px auto;
-  border-radius: 20px;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
   text-align: center;
   display: flex;
   justify-content: center;
-  
 }
 
 .text_cursos {
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto", sans-serif;
   color: white;
   font-size: 36px;
   font-weight: bold;
 }
 
 .curso_card {
-  background-color: #8C0404;
+  background-color:  rgba(191, 6, 6, 0.9) ;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
   margin-top: 40px;
   padding: 20px;
@@ -63,7 +58,7 @@ body {
 }
 
 .curso_card:hover {
-  background: #BF0606;
+  background: hsla(0, 94%, 28%, 0.9);
 }
 
 
@@ -108,6 +103,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
   }
 
 
@@ -117,8 +113,8 @@ body {
   }
 
   .curso_card {
-    width: 500px;
     height: auto;
+    width: 98%;
     padding: 15px;
     flex-direction: row;
     align-items: center;

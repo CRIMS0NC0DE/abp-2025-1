@@ -2,15 +2,6 @@
 /* ESTILOS GERAIS */
 /* ------------------------- */
 
-body {
-  background: url("../../assets/fatec_02.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  font-family: "Roboto Slab", serif;
-  margin: 0; /* Evita espaços indesejados */
-}
-
 .cabecalho {
   display: flex;
   background-color: #bf0606;
@@ -32,13 +23,10 @@ body {
 }
 
 .horario__container {
-  background-color: #076873;
   padding: 40px;
   width: 90%;
   max-width: 900px;
   margin: 50px auto;
-  border-radius: 20px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
 
@@ -211,9 +199,18 @@ table.tabela_horario th {
     width: 100%;
   }
 
-
   .exportar_btn {
     width: 100%;
+  }
+
+  .horario__container {
+    padding: 10px;
+    width: 100%;
+    height: 665px;
+    margin: 50px auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
   }
 }
 
@@ -242,21 +239,3 @@ table.tabela_horario th {
     border-collapse: collapse;
   }
 }
-
-@media (max-width: 768px) {
-
-   body {
-    height: 768px;
-  }
-
-  .horario__container {
-    padding: 10px;
-    width: 100%;
-    height: 665px;
-    margin: 50px auto;
-    flex-direction: column;
-    display: flex;
-    justify-content: flex-start;
-  }
-}
-

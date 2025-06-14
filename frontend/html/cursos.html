@@ -1,77 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta
-      charset="UTF-8"
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Cursos</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/cursos.css" />
-  </head>
-  <body>
-    <div class="cabecalho">
-      <a href="https://fatecjacarei.cps.sp.gov.br/" id="fatec"
-        >FATEC - Jacareí</a
-      >
-      <a href="https://siga.cps.sp.gov.br/">SIGA</a>
-    </div>
-    <div class="cursos__container">
-      <form>
-        <div class="text_cursos"><p>Cursos</p></div>
 
-        <a href="insertCadastro.html">
-          <div class="curso_card">
-            <img
-              src="../../assets/dsm.png"
-              alt="dsm-icon"
-              width="90px"
-              hwight="90px"
-            />
-            <span>Desenvolvimento de Software<br/>Multiplataforma</span>
-          </div>
-         
-        </a>
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/cursos.css" />
+</head>
 
-        <a href="insertCadastro.html">
-          <div class="curso_card">
-            <img
-              src="../../assets/geo.png"
-              alt="geoprocessamento-icon"
-              width="90px"
-              hwight="90px"
-            />
-            <span>Geoprocessamento</span>
-          </div>
-          
-        </a>
-
-        <a href="insertCadastro.html">
-          <div class="curso_card">
-            <img
-              src="../../assets/meio-ambiente.png"
-              alt="meio ambiente-icon"
-              width="90px"
-              hwight="90px"
-            />
-            <span>Meio Ambiente e Recursos Hidrícos</span>
-          </div>
-         
-        </a>
-      </form>
-    </div>
-    <footer>
-      <div class="container_rodape">
-        © 2025 FATEC Jacareí - Desenvolvolvido por Crims0nc0de - Todos os
-        direitos reservados.
+<body>
+  <header class="header">
+    <a href="https://fatecjacarei.cps.sp.gov.br/" class="header__link header__link--fatec-jac"
+      aria-label="Ir para a página inicial da FATEC Jacareí" target="_blank" rel="noopener noreferrer">
+      FATEC – Jacareí
+    </a>
+    <a href="https://siga.cps.sp.gov.br/" class="header__link header__link--siga" aria-label="Ir para a página do SIGA"
+      target="_blank" rel="noopener noreferrer">
+      SIGA
+    </a>
+    <a href="./index.html" class="header__link header__link--home">
+      HOME
+    </a>
+  </header>
+  <div class="cursos__container">
+    <form>
+      <div class="text_cursos">
+        <p>Cursos</p>
       </div>
-    </footer>
-  </body>
+
+      <a href="insertCadastro.html">
+        <div class="curso_card">
+          <img src="../../assets/dsm.png" alt="dsm-icon" width="90px" hwight="90px" />
+          <span>Desenvolvimento de Software<br />Multiplataforma</span>
+        </div>
+
+      </a>
+
+      <a href="insertCadastro.html">
+        <div class="curso_card">
+          <img src="../../assets/geo.png" alt="geoprocessamento-icon" width="90px" hwight="90px" />
+          <span>Geoprocessamento</span>
+        </div>
+
+      </a>
+
+      <a href="insertCadastro.html">
+        <div class="curso_card">
+          <img src="../../assets/meio-ambiente.png" alt="meio ambiente-icon" width="90px" hwight="90px" />
+          <span>Meio Ambiente e Recursos Hidrícos</span>
+        </div>
+
+      </a>
+    </form>
+  </div>
+  <footer>
+    <div class="container-footer">
+      © 2025 FATEC Jacareí – Desenvolvido por
+      <a href="https://github.com/CRIMS0NC0DE"
+         aria-label="Ir para o GitHub da equipe CrimsonCode"
+         target="_blank"
+         rel="noopener noreferrer">
+         <strong>Crims0nc0de</strong>
+      </a>
+      – Todos os direitos reservados.
+    </div>
+  </footer>
+</body>
+
 </html>
