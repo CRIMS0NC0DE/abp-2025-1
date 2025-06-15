@@ -9,7 +9,7 @@
 }
 
 .mapa__titulo {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     color: white;
     font-size: 36px;
     font-weight: bold;

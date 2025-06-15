@@ -10,7 +10,7 @@
 }
 
 h2 {
-  font-family: "Roboto Slab", serif;
+  font-family: var(--font-secondary);
   font-size: 24px;
   font-weight: 800;
   color: white;
