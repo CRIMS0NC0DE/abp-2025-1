@@ -15,6 +15,7 @@
 <div align=center >
  <img src=assets/QRCode.jpeg height=320px >
 </div>
+<p align=center>https://fatreck.ct.ws</p>
 
 ## REQUISITOS FUNCIONAIS 💡
 
@@ -246,8 +247,8 @@ dificuldade de entender as US's e Taks definidas pelo P.O.</p>
 
 <p><strong>O QUE DEU CERTO?:</strong> Trabalho conjunto dos integrantes, divisão das tasks e o burndown foi acertivo</p>
 
-<p><strong>O QUE DEU ERRADO?:</strong></p>
+<p><strong>O QUE DEU ERRADO?:</strong> Embora tivemos as daylis durante a sprint não foram feitas todos os dias. Entretanto a comunixação do grupo não foi afetada</p>
 
-<p><strong>O QUE PODEMOS MELHORAR?:</strong> </p>
+<p><strong>O QUE PODEMOS MELHORAR?:</strong> Frequência das daylis</p>
 
 
