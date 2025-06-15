@@ -7,6 +7,8 @@ document.getElementById("filtrar_btn").addEventListener("click", async () => {
     const response = await fetch(`http://localhost:3010/scriptHorarios/${curso}/${periodo}/${semestre}`);
     const dados = await response.json();
 
+    limparTabela();
+
     if (!dados || dados.length === 0) {
         alert("O curso escolhido não possui turma nesse semestre e/ou período!");
         return;
@@ -40,12 +42,7 @@ document.getElementById("filtrar_btn").addEventListener("click", async () => {
       const celula = linhaTabela.cells[coluna];
 
       const conteudo = `${item.nome_disciplina}<br>`;
-      celula.innerHTML = "";
-      if (celula.innerHTML.trim() !== "") {
-        celula.innerHTML += `<hr>${conteudo}`;
-      } else {
-        celula.innerHTML = conteudo;
-      }
+      celula.innerHTML = `${item.nome_disciplina}<br>`;
     });
 
     const professores = {};
@@ -86,7 +83,16 @@ document.getElementById("filtrar_btn").addEventListener("click", async () => {
   }
 });
 
+// Função auxiliar
+function limparTabela() {
+  const tabela = document.querySelector("#corpoTabela");
 
+  for (let i = 0; i < tabela.rows.length; i++) {
+    for (let j = 1; j < tabela.rows[i].cells.length; j++) {
+      tabela.rows[i].cells[j].innerHTML = "";
+    }
+  }
+}
 
 // Função para exportar para PDF
 document.querySelector(".exportar_btn").addEventListener("click", exportToPDF);
