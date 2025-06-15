@@ -12,6 +12,10 @@
 <strong>Fatreck</strong> é uma aplicação web, desenvolvida para auxiliar o corpo docente da FATEC Jacareí a disponibilizar os horários de aula de cada curso e em qual sala sera ministrada a respectiva aula de acordo com os cursos. Os alunos podem acessar essa página web e utiliza-lo para localização dentro da unidade e checar os horários de aula.
 </p>
 
+<div align=center >
+ <img src=assets/QRCode.jpeg height=320px >
+</div>
+
 ## REQUISITOS FUNCIONAIS 💡
 
 <ul>
@@ -112,12 +116,11 @@
 | NOME              | FUNÇÂO        | GITHUB                                                    |
 |-------------------|---------------|-----------------------------------------------------------|
 | Márcio Bueno      | Scrum Master  | [MarcioBuenoo](https://github.com/MarcioBuenoo)           |
-| Rodrigo Avelino   | Project Owner | [rodrigo-garvelino](https://github.com/rodrigo-garvelino) |
 | Leonardo Broinizi | Dev. Team     | [Leonardo-Broinizi](https://github.com/Leonardo-Broinizi) |
 | Bruno Mark        | Dev. Team     | [bruno-mark](https://github.com/bruno-mark)               |
 | Davi Snaider      | Dev. Team     | [davisnaider06](https://github.com/davisnaider06)         |
 | Henrique Pinho    | Dev. Team     | [rickshf](https://github.com/rickshf)                     |
-| Vinicius Ledro    | Dev. Team     | [ViniciusLedro](https://github.com/ViniciusLedro)         |
+| Vinicius Ledro    | Product Owner | [ViniciusLedro](https://github.com/ViniciusLedro)         |
  
 <br>
 
@@ -236,17 +239,15 @@ dificuldade de entender as US's e Taks definidas pelo P.O.</p>
 
 <h3>BURNDOWN 🔥</h3>
 <div>
-  <img src= >
+  <img src=assets/burndownSP3.png >
 </div>
 
 <h3>RETROSPECTIVA DE SPRINT 🗣️</h3>
 
-<p><strong>O QUE DEU CERTO?:</strong> Divisão e definição das tasks e US entregando objetivos claros facilitou a execução das atividades, além disso o trabalho em conjunto de todo o grupo onde o Dev. Team participava ativamente ajudando um ao outro no desenvolvimento foi um diferencial.</p>
+<p><strong>O QUE DEU CERTO?:</strong> Trabalho conjunto dos integrantes, divisão das tasks e o burndown foi acertivo</p>
 
-<p><strong>O QUE DEU ERRADO?:</strong> Durante a sprint vimos que algumas tarefas demandaram mais esforço e tempo que o esperado, sendo assim a distribuição dos pontos não foi acertiva. Outro ponto foi foi as daylis que realizamos, porém em algumas não tivemos um gerenciamento efetivo.</p>
+<p><strong>O QUE DEU ERRADO?:</strong></p>
 
-<p><strong>O QUE PODEMOS MELHORAR?:</strong> Distribuição dos pontos e efetividade das daylis.</p>
+<p><strong>O QUE PODEMOS MELHORAR?:</strong> </p>
 
-<div align=center >
- <img src=assets/QRCode.jpeg >
-</div>
+
